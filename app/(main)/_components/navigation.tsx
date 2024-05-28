@@ -5,6 +5,8 @@ import { usePathname } from "next/navigation";
 import React, { ElementRef, useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "usehooks-ts";
 
+import { UserItem } from "./user-item";
+
 import { cn } from "@/lib/utils";
 
 export const Navigation = () => {
@@ -93,7 +95,7 @@ export const Navigation = () => {
       <aside
         ref={sidebarRef}
         className={cn(
-          "relative z-50 flex h-full w-60 flex-col overflow-y-auto bg-secondary",
+          "relative z-[99999] flex h-full w-60 flex-col overflow-y-auto bg-secondary",
           isResetting && "transition-all ease-in-out duration-300",
           isMobile && "w-0"
         )}
@@ -109,7 +111,7 @@ export const Navigation = () => {
           <ChevronsLeft className="h-6 w-6" />
         </div>
         <div>
-          <p>Action items</p>
+          <UserItem />
         </div>
         <div className="mt-4">
           <p>Documents</p>
