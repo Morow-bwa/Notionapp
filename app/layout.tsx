@@ -3,8 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/provider/them-provider";
 import { ConvexClientProvider } from "@/components/provider/convex-provider";
-
-
+import { Toaster } from "sonner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -43,6 +42,7 @@ export default function RootLayout({
             disableTransitionOnChange
             storageKey="Yotion-theme-2"
           >
+            <Toaster position="bottom-center" />
             {children}
           </ThemeProvider>
         </ConvexClientProvider>
